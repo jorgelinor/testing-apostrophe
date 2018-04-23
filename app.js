@@ -19,8 +19,8 @@ var apos = require('apostrophe')({
 
     // If a template is not found somewhere else, serve it from the top-level
     // `views/` folder of the project
-
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
+
     'apostrophe-db': {
       uri: "mongodb://um7uixx9wsr1zql:pGXgGdhaDc7iWkkjv9nE@bieojfedueylq7c-mongodb.services.clever-cloud.com:27017/bieojfedueylq7c"
     },
@@ -29,12 +29,15 @@ var apos = require('apostrophe')({
         backend: 'azure',
         account: 'pastoralsalesianos',
         key: 'SNmpDQlvcPunTLeE4DcCJoi6/QbvKx7A1ZgDjjWhsfSnjurZoIkEMNLOIM2hxYqpxXBnv1FqlyhvPmCqOEthLA==',
-        container: 'test-container'
+        container: 'test-container',
+        disabledFileKey: ''
       }
     },
      'apostrophe-video-widgets': {},
      'apostrophe-module': {},
-     'local-video-widgets': {}
-
+     'local-video-widgets': {},
+     'apostrophe-pages': {
+       deleteFromTrash: true
+     }
   }
 });
