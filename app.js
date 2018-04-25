@@ -26,11 +26,10 @@ var apos = require('apostrophe')({
     },
     'apostrophe-attachments': {
       uploadfs: {
-        backend: 'azure',
-        account: 'pastoralsalesianos',
-        key: 'SNmpDQlvcPunTLeE4DcCJoi6/QbvKx7A1ZgDjjWhsfSnjurZoIkEMNLOIM2hxYqpxXBnv1FqlyhvPmCqOEthLA==',
-        container: 'test-container',
-        disabledFileKey: ''
+        backend: 's3',
+        secret: 'F3Hd9ETk5MEHzryhtbFBbzroIczJJMFjEhEDCK9M',
+        key: 'AKIAJX5733B6BK7QGCAQ',
+        bucket: 'pastoral-salesianos'
       }
     },
      'apostrophe-video-widgets': {},
@@ -38,6 +37,10 @@ var apos = require('apostrophe')({
      'local-video-widgets': {},
      'apostrophe-pages': {
        deleteFromTrash: true
+     },
+     'apostrophe-express': {
+      host: '0.0.0.0',
+      port: '2000'
      }
   }
 });
