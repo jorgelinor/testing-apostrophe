@@ -13,6 +13,14 @@
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.47.0"
+    "apostrophe": "^2.47.0",
+    "bug-killer": "^4.4.4",
+    "cli-spinner": "^0.2.6",
+    "express": "^4.15.2",
+    "gapi": "0.0.3",
+    "opn": "^4.0.2",
+    "r-json": "^1.2.7",
+    "socket.io": "^1.7.3",
+    "youtube-api": "^2.0.8"
   }
 }

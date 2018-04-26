@@ -14,6 +14,20 @@ var raddConfig = {
   }
 }
 
+var generalConfig = {
+	'apostrophe-db': {
+      uri: "mongodb://um7uixx9wsr1zql:pGXgGdhaDc7iWkkjv9nE@bieojfedueylq7c-mongodb.services.clever-cloud.com:27017/bieojfedueylq7c"
+    },
+    'apostrophe-attachments': {
+		uploadfs: {
+			backend: 's3',
+			secret: 'F3Hd9ETk5MEHzryhtbFBbzroIczJJMFjEhEDCK9M',
+			key: 'AKIAJX5733B6BK7QGCAQ',
+			bucket: 'pastoral-salesianos'
+		}
+	}
+} 
+
 var apos = require('apostrophe')({
   shortName: 'test-project',
 
@@ -35,13 +49,14 @@ var apos = require('apostrophe')({
     // `views/` folder of the project
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
-    'apostrophe-db': raddConfig["apostrophe-db"],
-    'apostrophe-attachments': raddConfig["apostrophe-attachments"],
+    'apostrophe-db': generalConfig["apostrophe-db"],
+    'apostrophe-attachments': generalConfig["apostrophe-attachments"],
      'apostrophe-video-widgets': {},
      'apostrophe-module': {},
      'local-video-widgets': {},
      'apostrophe-pages': {
        deleteFromTrash: true
-     }
+     },
+     'upload-youtube': {}
   }
 });
