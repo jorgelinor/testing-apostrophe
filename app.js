@@ -1,5 +1,19 @@
 var path = require('path');
 
+var raddConfig = {
+  'apostrophe-db': {
+    uri: "mongodb://raddy:password69@ds249249.mlab.com:49249/apostrophe-sandbox"
+  },
+  'apostrophe-attachments': {
+    uploadfs: {
+      backend: 's3',
+      secret: 'CQet6rgjxxlJJorVKWD2G980yqD/owdiKASo3JPC',
+      key: 'AKIAJK5BVMEGU4XPJ6YA',
+      bucket: 'raddelyn-bucket'
+    }
+  }
+}
+
 var apos = require('apostrophe')({
   shortName: 'test-project',
 
@@ -21,26 +35,13 @@ var apos = require('apostrophe')({
     // `views/` folder of the project
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
-    'apostrophe-db': {
-      uri: "mongodb://um7uixx9wsr1zql:pGXgGdhaDc7iWkkjv9nE@bieojfedueylq7c-mongodb.services.clever-cloud.com:27017/bieojfedueylq7c"
-    },
-    'apostrophe-attachments': {
-      uploadfs: {
-        backend: 's3',
-        secret: 'F3Hd9ETk5MEHzryhtbFBbzroIczJJMFjEhEDCK9M',
-        key: 'AKIAJX5733B6BK7QGCAQ',
-        bucket: 'pastoral-salesianos'
-      }
-    },
+    'apostrophe-db': raddConfig["apostrophe-db"],
+    'apostrophe-attachments': raddConfig["apostrophe-attachments"],
      'apostrophe-video-widgets': {},
      'apostrophe-module': {},
      'local-video-widgets': {},
      'apostrophe-pages': {
        deleteFromTrash: true
-     },
-     'apostrophe-express': {
-      host: '0.0.0.0',
-      port: '2000'
      }
   }
 });
