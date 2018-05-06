@@ -11,6 +11,17 @@ var raddConfig = {
       key: 'AKIAJK5BVMEGU4XPJ6YA',
       bucket: 'raddelyn-bucket'
     }
+  },
+  'upload-youtube': {
+    "web":{
+        "client_id":"514648689575-dqch2o47e5f7kdnsd9g8g6c64fhlb44k.apps.googleusercontent.com",
+        "project_id":"sigma-smile-202105","auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"0fC5zvl5p71b3XQEkfDUPgS7",
+        "redirect_uris":["http://localhost:3000/oauth2callback"],
+        "javascript_origins":["http://localhost:3000"]
+    }
   }
 }
 
@@ -57,17 +68,6 @@ var apos = require('apostrophe')({
      'apostrophe-pages': {
        deleteFromTrash: true
      },
-    'upload-youtube': {
-      "web":{
-        "client_id":"319062300395-4ivpluvpcntgm5mh4soh5pgoo4p84btu.apps.googleusercontent.com",
-        "project_id":"nice-catbird-202020",
-        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-        "token_uri":"https://accounts.google.com/o/oauth2/token",
-        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret":"DU-cqzSnupXr9YuBW2wBghNl",
-        "redirect_uris":["http://localhost:3000/oauth2callback"],
-        "javascript_origins":["http://localhost:5000","http://localhost:3000"]
-      }
-    }
+    'upload-youtube': raddConfig["upload-youtube"]
   }
 });
