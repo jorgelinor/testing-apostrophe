@@ -69,5 +69,4 @@ var apos = require('apostrophe')({
        deleteFromTrash: true
      },
     'upload-youtube': raddConfig["upload-youtube"]
-  }
 });
