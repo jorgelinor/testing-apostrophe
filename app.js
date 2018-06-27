@@ -68,5 +68,12 @@ var apos = require('apostrophe')({
      'apostrophe-pages': {
        deleteFromTrash: true
      },
-    'upload-youtube': raddConfig["upload-youtube"]
-});
+    'upload-youtube': raddConfig["upload-youtube"],
+    'apostrophe-express': {
+      csrf: {
+        exceptions: [ '/crear-cuenta' ]
+      }
+    },
+    'signup-form': {mongoURI: raddConfig['apostrophe-db'].uri}
+    }
+  });
